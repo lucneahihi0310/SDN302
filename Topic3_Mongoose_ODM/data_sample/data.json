@@ -1,0 +1,18 @@
+{
+    "books":[
+        {"id": 1, "title": "Book 1", "authorId": [1, 2], "publicYear":2024, "genre": "Genre1"},
+        {"id": 2, "title": "Book 2", "authorId": [3, 4, 1], "publicYear":2023, "genre": "Genre2"},
+        {"id": 3, "title": "Book 3", "authorId": [2, 4], "publicYear":2022, "genre": "Genre3"},
+        {"id": 4, "title": "Book 4", "authorId": [1, 3], "publicYear":2021, "genre": "Genre4"},
+        {"id": 5, "title": "Book 5", "authorId": [2], "publicYear":2020, "genre": "Genre5"},
+        {"id": 6, "title": "Book 6", "authorId": [3], "publicYear":2019, "genre": "Genre6"},
+        {"id": 7, "title": "Book 7", "authorId": [4], "publicYear":2018, "genre": "Genre7"},
+        {"id": 8, "title": "Book 8", "authorId": [1], "publicYear":2017, "genre": "Genre8"}
+    ],
+    "authors":[
+        {"id": 1, "name": "Nguyen Van A"},
+        {"id": 2, "name": "Nguyen Van B"},
+        {"id": 3, "name": "Nguyen Van C"},
+        {"id": 4, "name": "Nguyen Van D"}
+    ]
+}
