@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "65d6eaa7e4798a253c9f3d4f"
+  },
+  "name": "Contact Database for Estates Help Desk",
+  "description": "The Helpdesk team currently have a Microsoft Access database which has been organically developed from scratch, by a former employee.  The Key Contacts Database has grown to become a critical operational asset, which is now shared with our key front line service provider, Estates Security. The Microsoft Access database technology is not supported by ISG. This project is to develop and alternative in a supported technology which will provide increased service resilience.",
+  "startDate": {
+    "$date": "2020-10-10T00:00:00.000Z"
+  },
+  "type": "Software Product",
+  "department": {
+    "$oid": "65d6d2a797fcdc785dcfe897"
+  },
+  "createdAt": {
+    "$date": "2024-02-22T06:33:11.689Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-26T07:05:41.917Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d71433ba97db161156a4cb"
+  },
+  "name": "Annual Maria DB Upgrade",
+  "description": "We require our MariaDB infrastructure to remain current and supportable, We will look to upgrade to latest stable and supported versions of Mariadb. Our last project to migrate to Mariadb added automation to the build and deployment of databases, we will build on the back of this to patch in an efficient automated manner.",
+  "startDate": {
+    "$date": "2019-12-12T00:00:00.000Z"
+  },
+  "type": "Consulting Project",
+  "department": {
+    "$oid": "65d6d2e6eee18931e983e2e8"
+  },
+  "createdAt": {
+    "$date": "2024-02-22T09:30:27.770Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-26T06:54:17.665Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65db6dc937e8a60025b00983"
+  },
+  "name": "Digital Strategy Implementation",
+  "description": "",
+  "startDate": {
+    "$date": "2020-09-03T00:00:00.000Z"
+  },
+  "type": "Consulting Project",
+  "department": {
+    "$oid": "65d6d25e047a5b498cd18ce8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T16:41:45.059Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-26T07:06:19.125Z"
+  },
+  "__v": 0
+}]

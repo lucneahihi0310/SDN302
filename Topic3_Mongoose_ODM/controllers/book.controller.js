@@ -1,4 +1,5 @@
 const Book = require("../models/book.model");
+const Author = require("../models/author.model");
 
 /**
  * outputlistAll:[
@@ -35,15 +36,58 @@ exports.create = async (req, res, next) => {
             throw new Error('No data');
         }
         // khởi tạo dữ liệu kiểu book
-        const newBook = new Book({
-            title: req.body.title,
-            authors: ['Author1', 'Author2'],
-            publicationYear: req.body.publicationYear,
-            genre: req.body.genre
-        });
-        const addBook = await newBook.save();
+        // const newBook = new Book({
+        //     title: req.body.title,
+        //     authors: ['Author1', 'Author2'],
+        //     publicationYear: req.body.publicationYear,
+        //     genre: req.body.genre
+        // });
+        // const addBook = await newBook.save();
 
-        res.status(201).json(addBook);
+        // res.status(201).json(addBook);
+        const { title, authors: authorNames, publicationYear, genre } = req.body;
+
+        if (!title || !authorNames || !publicationYear || !genre) {
+            return res.status(400).json({ message: 'Missing required fields' });
+        }
+
+        const authorDocs = await Promise.all(authorNames.map(async (name) => {
+            let author = await Author.findOne({ name });
+            if (!author) {
+                author = new Author({ name, books: [] });
+                await author.save();
+            }
+            return author;
+        }));
+
+        const newBook = new Book({
+            title,
+            publicationYear,
+            genre,
+            authors: authorDocs.map(author => author._id)
+        });
+
+        await newBook.save();
+
+        await Promise.all(authorDocs.map(async (author) => {
+            if (!author.books.includes(newBook._id)) {
+                author.books.push(newBook._id);
+                await author.save();
+            }
+        }));
+
+        // lưu book vào từng author
+
+        res.status(201).json({
+            message: 'Book created successfully',
+            book: {
+                bookID: newBook._id,
+                title: newBook.title,
+                publicationYear: newBook.publicationYear,
+                genre: newBook.genre,
+                authors: authorDocs.map(a => a.name)
+            }
+        });
     } catch (error) {
         next(error);
     }

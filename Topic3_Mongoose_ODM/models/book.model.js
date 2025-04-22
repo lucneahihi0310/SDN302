@@ -10,7 +10,10 @@ const bookSchema = new mongoose.Schema({
         max: [50, 'Maximum length of title is 50 characters!']
     },
 
-    authors: [],
+    authors: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'author'
+        }],
     publicationYear: Number,
     genre:  {
         type: mongoose.Schema.Types.ObjectId,
