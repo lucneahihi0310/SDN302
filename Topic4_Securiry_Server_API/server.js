@@ -10,6 +10,7 @@ app.use(express.json()); // loại bỏ dữ liệu làm việc trên web server
 app.use(express.urlencoded({ extended: true })); // cho phép tiếp nhận dữ liệu kiểu multiple-form-data(uploat file)
 app.use(morgan('dev')); // sử dụng morgan để log các request đến server
 const connectDB = require('./config/db'); // import file kết nối cơ sở dữ liệu
+const userRoute = require('./Route/user.route'); // import file định nghĩa route cho user
 
 // tạo thư mục upload nếu chưa có
 if (!fs.existsSync('upload')) {
@@ -22,6 +23,7 @@ app.get('/', async (req, res) => {
 });
 
 app.use('/api/books', require('./Route/book.route'))
+app.use('/api/auth', userRoute); // sử dụng route cho user
 
 
 // Middleware 404: Nếu không route nào khớp thì tạo lỗi và đẩy vào middleware lỗi tổng quát
