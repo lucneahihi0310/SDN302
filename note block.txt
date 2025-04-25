@@ -1,0 +1,3 @@
+Kiểu		Ví dụ URL		Cách lấy			Ghi nhớ
+req.query	/search?title=hello	req.query.title		Dùng cho lọc, tìm kiếm
+req.params	/movie/hello		req.params.title	Dùng cho truy cập cụ thể

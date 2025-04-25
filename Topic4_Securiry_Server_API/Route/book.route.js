@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router(); // router là phiên bản thu gọn của expressjs
 const multer = require('multer');
 const path = require('path');
-const { listAll, create, detail, booksByAuthor, uploadImages } = require('../controllers/book.controller');
+const { listAll, create, detail, booksByAuthor, uploadImages, searchByTitleParam, searchByTitleQuery} = require('../controllers/book.controller');
 const middleware = require('../auth/auth.middleware'); // import middleware xác thực người dùng
 // cấu hình multer để lưu file
 const storage = multer.diskStorage({
@@ -33,7 +33,8 @@ router.get('/', listAll);
 
 router.get('/:bookId', detail);
 router.get('/authour/:authorId', booksByAuthor);
-
+router.get('/title/:title', searchByTitleParam);
+router.get('/search-by-title', searchByTitleQuery);
 router.post('/create', middleware, create);
 
 

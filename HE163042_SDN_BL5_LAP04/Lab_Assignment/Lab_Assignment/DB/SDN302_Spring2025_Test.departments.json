@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "65d6d25e047a5b498cd18ce8"
+  },
+  "name": "Integrated System",
+  "createdAt": {
+    "$date": "2024-02-22T04:49:34.065Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-22T04:49:34.065Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d6d2a797fcdc785dcfe897"
+  },
+  "name": "Software",
+  "createdAt": {
+    "$date": "2024-02-22T04:50:47.785Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-22T04:50:47.785Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d6d2e6eee18931e983e2e8"
+  },
+  "name": "Information Assurance",
+  "createdAt": {
+    "$date": "2024-02-22T04:51:50.095Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-22T04:51:50.095Z"
+  },
+  "__v": 0
+}]

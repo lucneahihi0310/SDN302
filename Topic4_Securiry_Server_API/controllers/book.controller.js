@@ -172,3 +172,42 @@ exports.uploadImages = async (req, res, next) => {
     }
 };
 
+exports.searchByTitleQuery = async (req, res, next) => {
+    try {
+        const title = req.query.title?.toLowerCase();
+        if (!title) return res.status(400).json({ message: 'Missing title in query' });
+
+        const books = await Book.find().populate('authors');
+        const filtered = books.filter(book => book.title.toLowerCase().includes(title));
+
+        res.status(200).json(filtered.map(book => ({
+            bookID: book._id,
+            bookTitle: book.title,
+            publicationYear: book.publicationYear,
+            genre: book.genre,
+            authors: book.authors.map(a => a.name)
+        })));
+    } catch (error) {
+        next(error);
+    }
+};
+exports.searchByTitleParam = async (req, res, next) => {
+    try {
+        const title = req.params.title?.toLowerCase();
+        if (!title) return res.status(400).json({ message: 'Missing title in URL' });
+
+        const books = await Book.find().populate('authors');
+        const filtered = books.filter(book => book.title.toLowerCase().includes(title));
+
+        res.status(200).json(filtered.map(book => ({
+            bookID: book._id,
+            bookTitle: book.title,
+            publicationYear: book.publicationYear,
+            genre: book.genre,
+            authors: book.authors.map(a => a.name)
+        })));
+    } catch (error) {
+        next(error);
+    }
+};
+

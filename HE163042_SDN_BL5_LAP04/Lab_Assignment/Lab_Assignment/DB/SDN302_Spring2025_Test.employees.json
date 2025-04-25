@@ -1,0 +1,210 @@
+[{
+  "_id": {
+    "$oid": "65dad3fa56a3dd744e600247"
+  },
+  "name": "Tran Bao Han",
+  "dob": {
+    "$date": "1980-09-12T00:00:00.000Z"
+  },
+  "gender": "Female",
+  "position": "Developer",
+  "department": {
+    "$oid": "65d6d25e047a5b498cd18ce8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:45:30.350Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:45:30.350Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad42656a3dd744e600249"
+  },
+  "name": "Quach Phu Thanh",
+  "dob": {
+    "$date": "1987-01-19T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Developer",
+  "department": {
+    "$oid": "65d6d2a797fcdc785dcfe897"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:46:14.780Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:46:14.780Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad45856a3dd744e60024b"
+  },
+  "name": "Chu Thanh Quang",
+  "dob": {
+    "$date": "1984-05-23T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Leader",
+  "department": {
+    "$oid": "65d6d25e047a5b498cd18ce8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:47:04.136Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:47:04.136Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad48256a3dd744e60024d"
+  },
+  "name": "Trinh Tien Dung",
+  "dob": {
+    "$date": "1990-06-14T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Developer",
+  "department": {
+    "$oid": "65d6d2a797fcdc785dcfe897"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:47:46.222Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:47:46.222Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad4a956a3dd744e60024f"
+  },
+  "name": "Phan Thu Thao",
+  "dob": {
+    "$date": "1990-03-12T00:00:00.000Z"
+  },
+  "gender": "Female",
+  "position": "Tester",
+  "department": {
+    "$oid": "65d6d25e047a5b498cd18ce8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:48:25.597Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:48:25.597Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad53d56a3dd744e600251"
+  },
+  "name": "Nguyen Xuan Quang",
+  "dob": {
+    "$date": "1987-01-19T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Leader",
+  "department": {
+    "$oid": "65d6d2a797fcdc785dcfe897"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:50:53.629Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:50:53.629Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad58856a3dd744e600253"
+  },
+  "name": "Trinh Thu Hang",
+  "dob": {
+    "$date": "2000-05-12T00:00:00.000Z"
+  },
+  "gender": "Female",
+  "position": "Developer",
+  "department": {
+    "$oid": "65d6d2e6eee18931e983e2e8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:52:08.125Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:52:08.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad5a356a3dd744e600255"
+  },
+  "name": "Tran Hong Quan",
+  "dob": {
+    "$date": "1998-04-16T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Leader",
+  "department": {
+    "$oid": "65d6d2e6eee18931e983e2e8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:52:35.446Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:52:35.446Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad5c556a3dd744e600257"
+  },
+  "name": "Pham The Tung",
+  "dob": {
+    "$date": "1984-09-12T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Manager",
+  "department": {
+    "$oid": "65d6d25e047a5b498cd18ce8"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:53:09.541Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:53:09.541Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65dad5e856a3dd744e600259"
+  },
+  "name": "Tran Manh Chien",
+  "dob": {
+    "$date": "1983-10-21T00:00:00.000Z"
+  },
+  "gender": "Male",
+  "position": "Manager",
+  "department": {
+    "$oid": "65d6d2a797fcdc785dcfe897"
+  },
+  "createdAt": {
+    "$date": "2024-02-25T05:53:44.342Z"
+  },
+  "updatedAt": {
+    "$date": "2024-02-25T05:53:44.342Z"
+  },
+  "__v": 0
+}]
