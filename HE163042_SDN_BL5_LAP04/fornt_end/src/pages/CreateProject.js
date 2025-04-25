@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from '../api/api';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddProject = () => {
   const [departments, setDepartments] = useState([]);
@@ -11,21 +11,29 @@ const AddProject = () => {
     type: "",
     department: "",
   });
+  const navigate = useNavigate();
 
-  // Fetch departments from the server
+  // Kiểm tra xem người dùng đã đăng nhập chưa (bằng cách kiểm tra token)
   useEffect(() => {
-    const fetchDepartments = async () => {
-      try {
-        const response = await api.get("/departments");
-        console.log("DEPARTMENTS RESPONSE:", response.data)
-        setDepartments(response.data);
-      } catch (error) {
-        console.error("Error fetching departments:", error);
-      }
-    };
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("You must be logged in to create a project.");
+      navigate("/login"); // Điều hướng đến trang đăng nhập nếu chưa đăng nhập
+    } else {
+      // Nếu có token, fetch các department
+      fetchDepartments();
+    }
+  }, [navigate]);
 
-    fetchDepartments();
-  }, []);
+  const fetchDepartments = async () => {
+    try {
+      const response = await api.get("/departments");
+      console.log("DEPARTMENTS RESPONSE:", response.data);
+      setDepartments(response.data);
+    } catch (error) {
+      console.error("Error fetching departments:", error);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +46,7 @@ const AddProject = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if any field is empty
+    // Kiểm tra nếu có bất kỳ trường nào bị bỏ trống
     if (
       !projectData.name ||
       !projectData.description ||
@@ -51,7 +59,11 @@ const AddProject = () => {
     }
 
     try {
-      const response = await api.post("/projects", projectData);
+      const response = await api.post("/projects", projectData, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // Gửi token khi tạo dự án
+        },
+      });
       console.log("Project created successfully", response.data);
       alert("Created Successfully");
       window.location.href = "/";

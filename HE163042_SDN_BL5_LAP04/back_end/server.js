@@ -9,11 +9,12 @@ app.use(morgan('dev'));
 const connectDB = require('./config/db');
 const cors = require('cors');
 app.use(cors());
+const userRoute = require('./routes/user.route.js');
 
 app.use('/projects', require('./routes/project.route.js'));
 app.use('/employees', require('./routes/employee.route.js'));
 app.use('/departments', require('./routes/department.route.js'));
-
+app.use('/api/auth', userRoute);
 app.use((req, res, next) => {
     const error = new Error('Đường dẫn không tồn tại hoặc không hợp lệ!');
     error.status = 404;
