@@ -39,7 +39,7 @@ return (
       </Link>
   
       <table className="table table-striped table-hover table-bordered">
-        <thead className="table-info">
+        <thead>
           <tr>
             <th>ID</th>
             <th>Project Name</th>

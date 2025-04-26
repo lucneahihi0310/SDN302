@@ -20,10 +20,9 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="container py-4">
+    <div className="container py-4" style={{ maxWidth: '600px', margin: '0 auto', border: '1px solid #ccc', padding: '20px'}}>
       <h1 className="text-center mb-4">Login</h1>
-
-      <form onSubmit={handleLogin}>
+      <form style={{ maxWidth: '400px', margin: '0 auto', border: '1px solid #ccc', padding: '20px',paddingBottom: '50px' }} onSubmit={handleLogin}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email

@@ -27,7 +27,7 @@ const DepartmentEmployees = () => {
         <p>No employees found.</p>
       ) : (
         <table className="table table-striped table-hover table-bordered">
-          <thead className="table-info">
+          <thead>
             <tr>
               <th>ID</th>
               <th>Employee Name</th>

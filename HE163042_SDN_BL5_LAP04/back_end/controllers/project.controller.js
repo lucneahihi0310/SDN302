@@ -1,4 +1,5 @@
 const Projects = require("../models/project.model");
+const Department = require("../models/department.model");
 
 exports.listAllProjects = async (req, res) => {
     try {
@@ -12,7 +13,7 @@ exports.listAllProjects = async (req, res) => {
             departmentId: project.department?._id || null,
             departmentName: project.department?.name || null
         }));
-        res.status(200).json(formattedProjects );
+        res.status(200).json(formattedProjects);
     } catch (error) {
         res.status(500).json({ success: false, message: "Server Error" });
     }
@@ -24,7 +25,12 @@ exports.createProject = async (req, res) => {
         if (!name || !description || !startDate || !type || !department) {
             return res.status(400).json({ success: false, message: "All fields are required" });
         }
-
+        // Check if department exists
+        const foundDepartment = await Department.findById(department);
+        if (!foundDepartment) {
+            return res.status(404).json({ success: false, message: "Department not found" });
+        }
+       
         const newProject = new Projects({
             name,
             description,
