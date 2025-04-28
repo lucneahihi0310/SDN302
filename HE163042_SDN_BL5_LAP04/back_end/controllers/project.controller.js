@@ -60,3 +60,15 @@ exports.createProject = async (req, res) => {
         res.status(500).json({ success: false, message: "Server Error" });
     }
 };
+
+exports.getProjectById = async (req, res) => {
+    try {
+        const project = await Projects.findById(req.params.id).populate('department', 'name');
+        if (!project) {
+            return res.status(404).json({ success: false, message: "Project not found" });
+        }
+        res.status(200).json(project);
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+};  
