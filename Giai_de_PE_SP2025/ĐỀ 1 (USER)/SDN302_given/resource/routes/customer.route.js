@@ -28,7 +28,7 @@ router.get('/profile', auth, async (req, res) => {
         const customer = await Customer.findById(req.customerId.id).select('-password');
         if (!customer) return res.status(404).json({ message: 'Customer not found' });
         const formattedCustomer = {
-            id: customer._id,
+            _id: customer._id,
             name: customer.name,
             email: customer.email,
             address: customer.address,
