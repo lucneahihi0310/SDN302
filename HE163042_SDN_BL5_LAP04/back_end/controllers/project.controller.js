@@ -15,7 +15,10 @@ exports.listAllProjects = async (req, res) => {
         }));
         res.status(200).json(formattedProjects);
     } catch (error) {
-        res.status(500).json({ success: false, message: "Server Error" });
+        // res.status(500).json({ success: false, message: "Server Error" });
+        error = new Error("Server Error");
+        error.status = 500;
+        next(error);
     }
 };
 exports.createProject = async (req, res) => {
