@@ -33,7 +33,7 @@ exports.createProject = async (req, res) => {
         if (!foundDepartment) {
             return res.status(404).json({ success: false, message: "Department not found" });
         }
-       
+
         const newProject = new Projects({
             name,
             description,
@@ -67,8 +67,11 @@ exports.createProject = async (req, res) => {
 exports.getProjectById = async (req, res) => {
     try {
         const project = await Projects.findById(req.params.id).populate('department', 'name');
-        if (!project) {
-            return res.status(404).json({ success: false, message: "Project not found" });
+        // Kiểm tra ID không hợp lệ
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            const error = new Error('Invalid project ID format');
+            error.status = 400;
+            return next(error);
         }
         res.status(200).json(project);
     } catch (error) {
